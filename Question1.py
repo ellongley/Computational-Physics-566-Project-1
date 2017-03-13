@@ -20,9 +20,9 @@ walk_x = linspace(0,0,steps); walk_y = linspace(0,0,steps); #x and y locations o
 
 for i in range(1,steps):
 
-    dir_x = rand()-0.5; dir_y = rand()-0.5; #generate random x and y coordinates to advance your walker
+    dir_x = rand()-0.5; dir_y = rand()-0.5; #generate random x and y coordinates in [-0.5,0.5] to advance your walker
     
-    norm_dir_x = dir_x/(sqrt(dir_x**2 + dir_y**2)); norm_dir_y = dir_y/(sqrt(dir_x**2 + dir_y**2)); #nomralized direction
+    norm_dir_x = dir_x/(sqrt(dir_x**2 + dir_y**2)); norm_dir_y = dir_y/(sqrt(dir_x**2 + dir_y**2)); #nomralize movement vector
     
     
     #Now, advance walker
@@ -31,5 +31,5 @@ for i in range(1,steps):
     walk_y[i] = walk_y[i-1] + norm_dir_y
 
 
-plt.plot(walk_x,walk_y) #initial test that random walker works
+plt.plot(walk_x,walk_y) #initial test to see that random walker works
 
